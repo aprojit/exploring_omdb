@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-class SearchSeries extends Component {
+class SearchEpisode extends Component {
   render() {
     return (
       <div className="search-params">
@@ -36,11 +36,11 @@ class SearchSeries extends Component {
         </label>
 
         <button style={{ float: "left" }} onClick={this.props.handleSearch}>
-          Search
+          Search Episode
         </button>
       </div>
     );
   }
 }
 
-export default SearchSeries;
+export default SearchEpisode;

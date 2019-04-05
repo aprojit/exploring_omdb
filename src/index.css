@@ -32,6 +32,19 @@ body {
   min-height: 100px;
 }
 
+.seriesTitle{
+  margin: 0px auto;
+  text-align: center;
+}
+
+.seriesTitle button{
+  background: none;
+  border: 2px solid #ad343e;
+  cursor: pointer;
+  font-size: larger;
+  font-weight: bold;  
+}
+
 .info {
   float: left;
   height: 100px;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Details from "./Details";
-import SearchSeries from "./SearchSeries";
+import SearchEpisode from "./SearchEpisode";
 
 class SeriesDetails extends Component {
   state = {
@@ -74,13 +74,13 @@ class SeriesDetails extends Component {
   render() {
     return (
       <div className="search">
-        <h3 style={{ margin: "0 auto", textAlign: "center" }}>
-          <a style={{ cursor: "pointer" }} onClick={this.handleTitleClick}>
+        <div className = "seriesTitle" >
+          <button onClick={this.handleTitleClick}>
             {this.state.title}
-          </a>
-        </h3>
+          </button>
+        </div>
 
-        <SearchSeries
+        <SearchEpisode
           handleSeasonChange={this.handleSeasonChange}
           handleEpisodeChange={this.handleEpisodeChange}
           handleSearch={this.handleSearch}
