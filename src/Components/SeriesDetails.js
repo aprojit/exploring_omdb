@@ -74,10 +74,8 @@ class SeriesDetails extends Component {
   render() {
     return (
       <div className="search">
-        <div className = "seriesTitle" >
-          <button onClick={this.handleTitleClick}>
-            {this.state.title}
-          </button>
+        <div className="seriesTitle">
+          <button onClick={this.handleTitleClick}>{this.state.title}</button>
         </div>
 
         <SearchEpisode

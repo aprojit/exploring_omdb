@@ -3,11 +3,10 @@ import Results from "./Results";
 import Details from "./Details";
 import SeriesDetails from "./SeriesDetails";
 import { Router, Link } from "@reach/router";
-import {Provider} from "./SearchContext"
+import { Provider } from "./SearchContext";
 
 class App extends Component {
-  
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -18,12 +17,12 @@ class App extends Component {
       type: "",
       types: ["movie", "series", "game"],
       message: "",
-      handleTitleChange : this.handleTitleChange,
-      handleTypeChange : this.handleTypeChange,
-      handleSearch : this.handleSearch
+      handleTitleChange: this.handleTitleChange,
+      handleTypeChange: this.handleTypeChange,
+      handleSearch: this.handleSearch
     };
   }
-  
+
   componentDidMount() {
     console.log("Just Checking", this.state.title);
     this.fetchMovies();
@@ -86,19 +85,18 @@ class App extends Component {
         </header>
         <Provider value={this.state}>
           <Router>
-
-            <Results 
+            <Results
               handleNext={this.handleNext}
-              handlePrevious = {this.handlePrevious}            
-              movies = {this.state.movies}
-              nextButton = {this.state.nextButton}
-              message = {this.state.message} 
-              path="/" />
+              handlePrevious={this.handlePrevious}
+              movies={this.state.movies}
+              nextButton={this.state.nextButton}
+              message={this.state.message}
+              path="/"
+            />
 
             <Details path="/details/:imdbID" />
 
             <SeriesDetails path="/seriesDetails/:imdbID" />
-
           </Router>
         </Provider>
       </div>

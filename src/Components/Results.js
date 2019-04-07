@@ -3,13 +3,10 @@ import Movie from "./Movie";
 import SearchParams from "./SearchParams";
 
 class Results extends Component {
-  
-
   render() {
     return (
       <div className="search">
-
-        <SearchParams   />
+        <SearchParams />
 
         {this.props.message === "" ? (
           this.props.movies.map(movie => {
@@ -25,7 +22,6 @@ class Results extends Component {
             <button onClick={this.props.handleNext}>Next</button>
           )}
         </div>
-        
       </div>
     );
   }
