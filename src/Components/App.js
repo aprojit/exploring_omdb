@@ -47,7 +47,7 @@ class App extends Component {
         } else {
           movies = [];
           nextButton = false;
-          message = "No Content Found..!";
+          message = "Nothing Found..!";
         }
         this.setState({ movies, nextButton, message });
       })
