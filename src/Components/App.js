@@ -24,7 +24,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("Just Checking", this.state.title);
     this.fetchMovies();
   }
 

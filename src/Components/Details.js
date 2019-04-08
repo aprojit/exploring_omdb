@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import commonImg from "./common_movie_poster.png";
+import Modal from "../Modal";
 
 class Details extends Component {
   state = {
-    loading: true
+    loading: true,
+    showModal: false
   };
 
   componentDidUpdate(prevProps) {
@@ -44,6 +46,8 @@ class Details extends Component {
       });
   }
 
+  handleWatchList = () => this.setState({ showModal: !this.state.showModal });
+
   render() {
     if (this.state.loading) {
       return <h1>loading … </h1>;
@@ -58,7 +62,8 @@ class Details extends Component {
       director,
       imdbRating,
       poster,
-      plot
+      plot,
+      showModal
     } = this.state;
     return (
       <div className="details">
@@ -67,6 +72,7 @@ class Details extends Component {
         </div>
         <div>
           <h1>{title}</h1>
+          <button onClick={this.handleWatchList}>Add To WatchList</button>
           <h2>{`Year : ${year} , Realeased : ${released} , Type :  ${type}`}</h2>
           <h2>{`Language : ${language} , Genre : ${genre} , Imdb Rating : ${imdbRating} `}</h2>
           <h2>{`Director : ${director}`}</h2>
@@ -75,6 +81,18 @@ class Details extends Component {
             {plot}
           </p>
         </div>
+
+        {showModal && (
+          <Modal>
+            <div>
+              <h3> Are you sure to add "{title}" to WatchList </h3>
+              <div className="buttons">
+                <button onClick={this.handleWatchList}>Yes</button>
+                <button onClick={this.handleWatchList}>No</button>
+              </div>
+            </div>
+          </Modal>
+        )}
       </div>
     );
   }
